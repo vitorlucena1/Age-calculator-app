@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: hsl(0, 0%, 94%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+  
+  .age-calculator {
+    background: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .inputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .inputs > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100px;
+    position: relative;
+  }
+  
+  label {
+    font-size: 0.75rem;
+    color: hsl(0, 1%, 44%);
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 86%);
+    transition: border-color 0.3s;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: hsl(259, 100%, 65%);
+  }
+  
+  .error-container {
+    height: 2.3rem;
+    overflow: hidden;
+  }
+  
+  .error {
+    color: hsl(0, 100%, 67%);
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+    white-space: pre-line;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .error-container.animate .error {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 2rem 0;
+  }
+  
+  .submit-btn {
+    background-color: hsl(259, 100%, 65%);
+    color: white;
+    font-size: 2rem;
+    border: none;
+    border-radius: 50%;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background-color: hsl(259, 100%, 70%);
+  }
+  
+  .results {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  
+  .result-line {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  .result-line span {
+    color: hsl(259, 100%, 65%);
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .inputs {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .submit-btn {
+      position: static;
+      margin: 0 auto;
+    }
+  
+    .results {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+  
