@@ -145,7 +145,6 @@ input:focus {
   }
 }
 
-/* Responsividade para telas pequenas */
 @media (max-width: 600px) {
   .calculadora-idade {
     padding: 2rem 1.5rem;
