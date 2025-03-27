@@ -10,20 +10,20 @@ export function anoBissexto(ano) {
     const erros = { dia: '', mes: '', ano: '' };
     let valido = true;
   
-    const d = parseInt(dia, 10);
-    const m = parseInt(mes, 10);
-    const a = parseInt(ano, 10);
+    const diaInt = parseInt(dia, 10);
+    const mesInt = parseInt(mes, 10);
+    const anoInt = parseInt(ano, 10);
   
     const hoje = new Date();
-    const dataNascimento = new Date(a, m - 1, d);
+    const dataNascimento = new Date(anoInt, mesInt - 1, diaInt);
   
     if (!dia) {
       erros.dia = 'Campo obrigatório';
       valido = false;
-    } else if (isNaN(d) || d < 1 || d > 31) {
+    } else if (isNaN(diaInt) || diaInt < 1 || diaInt > 31) {
       erros.dia = 'Dia inválido';
       valido = false;
-    } else if (m >= 1 && m <= 12 && a > 0 && d > diasNoMes(m, a)) {
+    } else if (mesInt >= 1 && mesInt <= 12 && anoInt > 0 && diaInt > diasNoMes(mesInt, anoInt)) {
       erros.dia = 'Dia não existe\n nesse mês';
       valido = false;
     }
@@ -31,7 +31,7 @@ export function anoBissexto(ano) {
     if (!mes) {
       erros.mes = 'Campo obrigatório';
       valido = false;
-    } else if (isNaN(m) || m < 1 || m > 12) {
+    } else if (isNaN(mesInt) || mesInt < 1 || mesInt > 12) {
       erros.mes = 'Mês inválido';
       valido = false;
     }
@@ -39,7 +39,7 @@ export function anoBissexto(ano) {
     if (!ano) {
       erros.ano = 'Campo obrigatório';
       valido = false;
-    } else if (isNaN(a) || ano.length !== 4 || a < 1000) {
+    } else if (isNaN(anoInt) || ano.length !== 4 || anoInt < 1000) {
       erros.ano = 'Ano inválido';
       valido = false;
     }
